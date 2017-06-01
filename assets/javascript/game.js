@@ -3,8 +3,10 @@
 //  resetBtn
 
 //IDs:
+//  wrapper
 //  panelText
 //  timer
+//  display
 
 //PseudoCode:
 
@@ -65,16 +67,13 @@ var stopwatch = {
 	    }
 	},  // End Start
 
-	//Reset
+	//Reset  -- HOW TO RESET AND START AGAIN UPON CLICK???????
 	reset: function() {
 		clearInterval(intervalId);
-		clockRunning = false;
 		stopwatch.time = 10;
+		intervalId = setInterval(stopwatch.time);
+		clockRunning = false;
 		$('display').html("00:10");
-	    
-	    //Restart
-	    intervalId = setInterval(stopwatch.count, 1000);
-	    clockRunning = false;
 
 	// DONE: Change the "display" div to "00:00."
 	$("#display").html("00:10");
