@@ -34,27 +34,34 @@
 <div class="jumbotron">
 <div class="container text-center">
   	<h1>Lunar Trivia Game!!</h1>
-	<br>
-	<br>
-	<div>
-		<p><a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start!</a></p>
-	</div>
+		<br>
+		<br>
+		<div>
+			<p><a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start!</a></p>
+		</div>
 
 	<!-- For the purposes of hiding and un-hiding things -->
   	<div id="wrapper" class="hidden">
 
 	<div class="panel panel-default">
  		<div align="center" class="panel-body" id="timer">
-			<h2>Timer</h2>
-			<div id="display">00:10</div>
+			<h2>Countdown Timer</h2>
+			<br>
+			<div id="display">00:05</div>
   		</div>
 	</div> <!-- End Timer Panel -->	
 	
 	<div class="panel panel-default">
  		<div class="panel-body" id="panelText">
-			<h2>Questions</h2>
-				<p><span id="question1">Question1</span></p>
-				<p><span id="options1">Options1</span></p>
+				<h3><span id="question1">question1</span></h3>
+				<br>
+				<ol>
+					<span id="option1"><li><button class="button button1">option1</button></li></span>
+					<span id="option2"><li><button class="button button1">option2</button></li></span>
+					<span id="option3"><li><button class="button button1">option3</button></li></span>
+					<span id="option4"><li><button class="button button1">option4</button></li></span>
+				</ol>
+
   		</div>
 	</div> <!-- End Questions Panel -->
 
@@ -66,13 +73,12 @@
 
 	</div> <!-- End Wrapper Class -->
 
-
 </div> <!-- End Container -->
 </div> <!-- End Jumbotron -->
 </div> <!-- End Row -->
 
-	<!-- Link to Javascript -->
-	<script type="text/javascript" src="assets/javascript/game.js"></script>
+<!-- Link to Javascript -->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
  
 </body>
 </html>

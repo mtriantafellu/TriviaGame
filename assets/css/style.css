@@ -1,11 +1,11 @@
-/* background="assets/images/background1.jpg" */
+/* dark to light:  #00BFFF  #87CEFA  #00FFFF */
 
 body {
 	background-image: url("../images/background1.jpg");
   }
 
 .jumbotron {
-	color: #FFFFFF;
+	color: #87CEFA;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	background-size: cover;
@@ -43,7 +43,6 @@ body {
 }
 
 h2 {
-	text-decoration: underline;
 	font-size: 40px;
 }
 
@@ -57,4 +56,25 @@ h2 {
 	align-content: center;
 	align-self: center;
 	padding: 10px;
+	border-radius: 12px;
+}
+
+li {
+	display: inline-block;
+}
+
+.button1 {
+	border: white;
+	background-color: #87CEFA;
+	color: black;
+	text-align: center;
+	display: inline-block;
+	font-size: 20px;
+	border-radius: 5px;
+	size: 50px;
+}
+
+h3 {
+	font-size: 50px;
+	color: #87CEFA;
 }

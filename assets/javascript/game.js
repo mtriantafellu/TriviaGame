@@ -7,6 +7,8 @@
 //  panelText
 //  timer
 //  display
+//  question1
+//  options1
 
 //PseudoCode:
 
@@ -22,19 +24,22 @@
 //Slot 0 for Questions, Slot 1-4 for answers
 //Pull slot 0 post in top
 //Pull slot 1-4 post below with 4 buttons
+//ScoreScreen
+//Display:
+  //  Total# Correct answers
+  //  Total# Incorrect answers
+//Reset to Start
+
+//======================
 
 $(document).ready(function() {
-
-//When window is first loaded:
-window.onload = function() {
-};
 
 //on.Click startBtn reveal three panels and start timer
 $('#startBtn').on("click", function() {
 
 	$('#wrapper').removeClass('hidden');
 	$('#startBtn').addClass('hidden');
-
+	 
 });	// End startBtn
 
 //on.Click resetBtn hide three panels
@@ -45,19 +50,39 @@ $("#resetBtn").on("click", function() {
 
 }); // End resetBtn	
 
+//=======================
+//Start Questions/Answers:
+/*
+var repo = {
+	question1: {
+		question: "What is the third planet from sun?",
+		answer: "Earth",
+		option1: "Mars",
+		option2: "Venus",
+		option3: "Saturn",
+	},
+		question: "What planet has a red spot?",
+		answer: "Jupiter",
+		option1: "Mercury",
+		option2: "Neptune",
+		option3: "Pluto",
+	}
+},
+*/
+
+//=======================
 //  Timer Function Starts:
 window.onload = function() {
   $("#startBtn").on("click", stopwatch.start);
   $("#resetBtn").on("click", stopwatch.reset);
-};
+}; // End Window.onload for Timer
 
 var intervalId;
 var clockRunning = false;
 var stopwatch = {
 	//initial time = 10seconds
-	time: 10,
+	time: 5,
 
-	//Start
 	start: function() {
 
 		// DONE: Use setInterval to start the count here and set the clock to running.
@@ -67,20 +92,18 @@ var stopwatch = {
 	    }
 	},  // End Start
 
-	//Reset  -- HOW TO RESET AND START AGAIN UPON CLICK???????
 	reset: function() {
 		clearInterval(intervalId);
-		stopwatch.time = 10;
+		stopwatch.time = 5;
 		intervalId = setInterval(stopwatch.time);
 		clockRunning = false;
-		$('display').html("00:10");
+		$('display').html("00:05");
 
 	// DONE: Change the "display" div to "00:00."
-	$("#display").html("00:10");
+	$("#display").html("00:05");
 
 	},  // End Reset
 	
-	//Counter	
 	count: function() {
 		//Decrement stopwatch time by 1
 	    stopwatch.time--;
@@ -111,12 +134,12 @@ var stopwatch = {
 		    if (seconds == 0) {
 		    	clearInterval(intervalId);
 		    	clockRunning === false;
+		    	//alert("Game Over!")
 		    }
 
 		    return minutes + ":" + seconds;
 	  	}
 
 }; // End Timer
-
 
 }); // End document.ready
