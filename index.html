@@ -33,25 +33,28 @@
 <div class="row">
 <div class="jumbotron">
 <div class="container text-center">
-  	
-  	<div class="wrapper">
-
   	<h1>Lunar Trivia Game!!</h1>
-	  <br>
-	  <br>
-	  	<div>
-	  	<p><a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start!</a></p>
-		</div>
+		<br>
+		<br>
+	<div>
+		<p><a id="startBtn" class="btn btn-primary btn-lg" href="#" role="button">Start!</a></p>
+	</div>
+
+	<!-- For the purposes of hiding and un-hiding things -->
+  	<div id="wrapper" class="hidden">
 
 	<div class="panel panel-default">
- 		<div class="panel-body">
-			<span id="timer">Timer</span>
+ 		<div align="center" class="panel-body" id="timer">
+			<h2>Timer</h2>
+			<div id="display">00:10</div>
   		</div>
 	</div> <!-- End Timer Panel -->	
 	
 	<div class="panel panel-default">
- 		<div class="panel-body">
-			<span id="panelText">Questions</span>
+ 		<div class="panel-body" id="panelText">
+			<h2>Questions</h2>
+				<p><span id="question1">Question1</span></p>
+				<p><span id="options1">Options1</span></p>
   		</div>
 	</div> <!-- End Questions Panel -->
 
@@ -62,6 +65,7 @@
 	</div> <!-- End Reset Button -->
 
 	</div> <!-- End Wrapper Class -->
+
 
 </div> <!-- End Container -->
 </div> <!-- End Jumbotron -->

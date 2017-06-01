@@ -17,6 +17,14 @@
 	font-size: 50px;
 }
 
+#resetBtn {
+	height: 100px;
+	width: 200px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 50px;
+}
+
 .panel {
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -26,4 +34,21 @@
 	margin-right: 25px;
 	background: transparent;
 	border: none;
+}
+
+h2 {
+	text-decoration: underline;
+	font-size: 40px;
+}
+
+#display {
+	font-size: 75px;
+	background-color: black;
+	color: yellow;
+	width: 250px;
+	height: 100px;
+	text-align: center;
+	align-content: center;
+	align-self: center;
+	padding: 10px;
 }
