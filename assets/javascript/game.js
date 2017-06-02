@@ -1,22 +1,26 @@
 //Buttons:
 //  startBtn
 //  resetBtn
+//  button# (1-4)
 
 //IDs:
 //  wrapper
 //  panelText
 //  timer
 //  display
-//  question1
-//  options1
+//  question#
+//  answer#
+//  options#
+//  correct
+//  incorrect
 
 //PseudoCode:
 
 //User clicks button
-//on.Click display questions in panel
-//on.Click display timer at top of panel - timer starts when start clicked
-//on.Click display reset button at bottom - resets entire page
-//Four questions with four possible answers
+//on.Click Start display questions in panel
+//on.Click Start display timer at top of panel - timer starts when start clicked
+//on.Click Start display reset button at bottom - resets entire page
+//Two questions with four possible answers
 //Create an object with questions and answers
   //  Create an array of questions
   //  Create an array of answers
@@ -24,6 +28,11 @@
 //Slot 0 for Questions, Slot 1-4 for answers
 //Pull slot 0 post in top
 //Pull slot 1-4 post below with 4 buttons
+//if timer != 0 user can select a button
+//if user selects button restart timer
+//if timer == 0 user cannot select a button return score screen (correct/incorrect)
+//if user button selected == answer, correct++
+//if user button selected != answer, incorrect++
 //ScoreScreen
 //Display:
   //  Total# Correct answers
@@ -52,49 +61,102 @@ $('#resetBtn').on('click', function() {
 //=======================
 //Start Questions/Answers:
 
-var repo = {
-	option1: {
-		question1: "What Planet is third from the sun?",
-		answer1: "Earth",
-		option1: "Mars",
-		option2: "Venus",
-		option3: "Mercury",
+var repo = [ {
+		question: "What Planet is third from the sun?",
+		options: ["Earth", "Mars", "Venus", "Mercury"],
+		answer: 0,
 	},
-	option2: {
-		question2: "What Planet is closest to the sun?",
-		answer2: "Mercury",
-		option1: "Venus",
-		option2: "Mars",
-		option3: "Earth",
+	{
+		question: "What Planet is closest to the sun?",
+		options: ["Mercury", "Venus", "Earth", "Mars"],
+		answer: 3,
 	},
+];
+
+console.log(repo[0].question[1]);
+console.log(repo[1].options[0]);
+
+
+$("#question1").text(repo[0].question);
+$('#answer1').text(repo[0].options[0]);
+$('#option1-1').text(repo[0].options[1]);
+$('#option1-2').text(repo[0].options[2]);
+$('#option1-3').text(repo[0].options[3]);
+
+$("#question2").text(repo[1].question);
+$('#answer2').text(repo[1].options[0]);
+$('#option2-1').text(repo[1].options[1]);
+$('#option2-2').text(repo[1].options[2]);
+$('#option2-3').text(repo[1].options[3]);
+
+
+var correct = 0;
+	console.log('Correct', correct);
+var incorrect = 0;
+	console.log('Incorrect', incorrect);
+
+//If answer1 selected ++ to correct counter
+$('#answer1').on('click', function() {
+	correct++;
+	console.log('Correct', correct);
+	$('#correct').text(correct);
+});
+
+//If answer2 selected ++ to correct counter
+$('#answer2').on('click', function() {
+	correct++;
+	console.log('Correct', correct);
+	$('#correct').text(correct);
+});
+
+//If any option selected ++ to incorrect counter
+$('#option1-1').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+$('#option1-2').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+$('#option1-3').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+$('#option2-1').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+$('#option2-2').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+$('#option2-3').on('click', function() {
+	incorrect++;
+	console.log('Inorrect', incorrect);
+	$('#incorrect').text(incorrect);
+});
+
+/*
+jQuery(function) {
+
+$('#resetBtn').on('click', function() {
+
+
+});
 };
-
-questionInPlay: null
-
-console.log(repo.option1.question1);
-console.log(repo.option1.answer1);
-
-$("#question1").text(repo.option1.question1);
-$('#answer1').text(repo.option1.answer1);
-$('#option1').text(repo.option1.option1);
-$('#option2').text(repo.option1.option2);
-$('#option3').text(repo.option1.option3);
-
-console.log(repo.option2.question2);
-console.log(repo.option2.answer2);
-
-$("#question2").text(repo.option2.question2);
-$('#answer2').text(repo.option2.answer2);
-$('#option21').text(repo.option2.option1);
-$('#option22').text(repo.option2.option2);
-$('#option23').text(repo.option2.option3);
-
-}; // End setupGame
+*/
 
 
-//Possible question ideas:
-//"What planet has a red spot?",
-//"What planet is closest to the sun?",
 //=======================
 //  Timer Function Starts:
 window.onload = function() {
