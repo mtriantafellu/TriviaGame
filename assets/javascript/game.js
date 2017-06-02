@@ -76,7 +76,6 @@ var repo = [ {
 console.log(repo[0].question[1]);
 console.log(repo[1].options[0]);
 
-
 $("#question1").text(repo[0].question);
 $('#answer1').text(repo[0].options[0]);
 $('#option1-1').text(repo[0].options[1]);
@@ -88,7 +87,6 @@ $('#answer2').text(repo[1].options[0]);
 $('#option2-1').text(repo[1].options[1]);
 $('#option2-2').text(repo[1].options[2]);
 $('#option2-3').text(repo[1].options[3]);
-
 
 var correct = 0;
 	console.log('Correct', correct);
@@ -146,15 +144,10 @@ $('#option2-3').on('click', function() {
 	$('#incorrect').text(incorrect);
 });
 
-/*
-jQuery(function) {
-
+//Reset the page
 $('#resetBtn').on('click', function() {
-
-
+	location.reload(true);
 });
-};
-*/
 
 
 //=======================
