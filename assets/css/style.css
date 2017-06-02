@@ -2,6 +2,8 @@
 
 body {
 	background-image: url("../images/background1.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
   }
 
 .jumbotron {
@@ -69,12 +71,14 @@ li {
 	color: black;
 	text-align: center;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 40px;
 	border-radius: 5px;
-	size: 50px;
+	size: 100px;
+	padding: 25px;
+	margin: 25px;
 }
 
 h3 {
-	font-size: 50px;
+	font-size: 60px;
 	color: #87CEFA;
 }

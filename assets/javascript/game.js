@@ -31,11 +31,10 @@
 //Reset to Start
 
 //======================
-
 $(document).ready(function() {
 
 //on.Click startBtn reveal three panels and start timer
-$('#startBtn').on("click", function() {
+$('#startBtn').on('click', function() {
 
 	$('#wrapper').removeClass('hidden');
 	$('#startBtn').addClass('hidden');
@@ -43,7 +42,7 @@ $('#startBtn').on("click", function() {
 });	// End startBtn
 
 //on.Click resetBtn hide three panels
-$("#resetBtn").on("click", function() {
+$('#resetBtn').on('click', function() {
 
 	$('#wrapper').addClass('hidden');
 	$('#startBtn').removeClass('hidden');
@@ -52,29 +51,55 @@ $("#resetBtn").on("click", function() {
 
 //=======================
 //Start Questions/Answers:
-/*
+
 var repo = {
-	question1: {
-		question: "What is the third planet from sun?",
-		answer: "Earth",
+	option1: {
+		question1: "What Planet is third from the sun?",
+		answer1: "Earth",
 		option1: "Mars",
 		option2: "Venus",
-		option3: "Saturn",
+		option3: "Mercury",
 	},
-		question: "What planet has a red spot?",
-		answer: "Jupiter",
-		option1: "Mercury",
-		option2: "Neptune",
-		option3: "Pluto",
-	}
-},
-*/
+	option2: {
+		question2: "What Planet is closest to the sun?",
+		answer2: "Mercury",
+		option1: "Venus",
+		option2: "Mars",
+		option3: "Earth",
+	},
+};
 
+questionInPlay: null
+
+console.log(repo.option1.question1);
+console.log(repo.option1.answer1);
+
+$("#question1").text(repo.option1.question1);
+$('#answer1').text(repo.option1.answer1);
+$('#option1').text(repo.option1.option1);
+$('#option2').text(repo.option1.option2);
+$('#option3').text(repo.option1.option3);
+
+console.log(repo.option2.question2);
+console.log(repo.option2.answer2);
+
+$("#question2").text(repo.option2.question2);
+$('#answer2').text(repo.option2.answer2);
+$('#option21').text(repo.option2.option1);
+$('#option22').text(repo.option2.option2);
+$('#option23').text(repo.option2.option3);
+
+}; // End setupGame
+
+
+//Possible question ideas:
+//"What planet has a red spot?",
+//"What planet is closest to the sun?",
 //=======================
 //  Timer Function Starts:
 window.onload = function() {
-  $("#startBtn").on("click", stopwatch.start);
-  $("#resetBtn").on("click", stopwatch.reset);
+  $('#startBtn').on('click', stopwatch.start);
+  $('#resetBtn').on('click', stopwatch.reset);
 }; // End Window.onload for Timer
 
 var intervalId;
